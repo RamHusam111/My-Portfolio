@@ -9,6 +9,13 @@ export const LINKEDIN_URL = 'https://www.linkedin.com/in/husam-ramoni';
 export const GITHUB_URL = 'https://github.com/RamHusam111';
 export const ABOUT_ME_PARAGRAPH = `Hi, I'm Husam Ramoni graduated from Bethlehem University with a BSc in Software Engineering. I have hands on experience in developing production ready applications using modern technologies and best practices. Known for clear communication, teamwork, and delivering solutions
 that meet real-world needs.`;
+
+
+
+
+
+
+
 export const SKILLS = [
   {programmingLanguages: [
     'Java', 'Python', 'JavaScript','NodeJS', 'HTML', 'CSS',
@@ -20,12 +27,26 @@ export const SKILLS = [
     'MySQL', 'MongoDB', 'Firebase', 'Hibernate', 'JPA'
   ]},
   {testingTools:[
-    'Junit', 'TestNG', 'Selenium', 'RestAssured', 'Mockito'
+    'Postman', 'Junit', 'TestNG', 'Selenium', 'RestAssured', 'Mockito'
   ]},
-  {tools: [
-    'Git', 'GitHub', 'GitHub Actions', 'Docker', 'Postman', 'Jira','Maven', 'Swagger', 'Figma','Linux','Windows Server','XAMPP'
-  ]}  
+  {managementTools: [
+    'Agile', 'Jira', 'Scrum', 'Git', 'GitHub', 'GitHub Actions', 'Docker', 'Excel', 
+  ]},
+
+  {operatingSystems: [
+    'MacOS', 'Windows','Linux'
+  ]},
+
+  {others: [
+     'Microservices', 'Maven', 'Swagger', 'Eureka' ,'Figma', 'Windows Server','XAMPP'
+  ]},
+  
 ];
+
+
+
+
+
 
 
 export const PROJECTS_DATA = [
@@ -88,6 +109,13 @@ authors: [
 ];
 
 
+
+
+
+
+
+
+
 export const ABOUT_ME_CARDS = [
   {
     img: `${deans_list_fall2023}`,
@@ -117,6 +145,33 @@ export const ABOUT_ME_CARDS = [
   },
 ];
 
+
+export const EXPERIENCE_DATA = [
+  {
+    tag: 'Internship',
+    title: 'Focus Solutions - Full-Stack Engineer',
+    description: [
+      'Designed and tested e-commerce applications using Frappe and ERPNext frameworks, collaborating with senior developers.',
+      'Customized ERPNext modules and integrated APIs.',
+      'Trained in ERPNext Frappe JavaScript Python and REST APIs.',
+      'Gained experience with Agile Linux and Git.'
+    ],
+    date: '2024 - 2025',
+    technologies: ['Frappe', 'ERPNext', 'integrated APIs', 'JavaScript', 'Python', 'REST APIs', 'Agile', 'Linux', 'Git',]
+  },
+  {
+    tag: 'Internship',
+    title: ' IT Unit, Bethlehem University - Software Engineering and QA Automation',
+    description: [
+      'Designed and tested software with senior engineers to enhance reliability.',
+      'Contributed to code reviews, coding standards, and Agile/Scrum meetings.',
+      'Trained in Software QA and Automation with Java and Selenium.',
+      'Built responsive React UIs with reusable components for better performance.',
+    ],
+    date: '2024',
+    technologies: ['Agile', 'Scrum', 'Networking', 'Java', 'Selenium', 'React', 'Software QA' ]
+  },
+];
 
 
 

@@ -1,11 +1,7 @@
 import React from 'react'
 import { SKILLS } from '../../constants';
 import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
-import { Card } from '@mui/material';
-import Stack from '@mui/material/Stack';
-import Chip from '@mui/material/Chip';
-import Box from '@mui/material/Box';
+import { Card, Typography, Stack, Chip, Box} from '@mui/material';
 
 export default function SkillsSection() {
   return (
@@ -66,13 +62,37 @@ export default function SkillsSection() {
       </Stack>
     </Box>
 
-    {/* === Tools === */}
+    {/* === Management Tools === */}
     <Box>
       <Typography variant="h6" gutterBottom>
-        Tools
+        Management Tools
       </Typography>
       <Stack direction="row" flexWrap="wrap" gap={1}>
-        {SKILLS[4].tools.map((skill, index) => (
+        {SKILLS[4].managementTools.map((skill, index) => (
+          <Chip key={index} label={skill} variant="outlined"/>
+        ))}
+      </Stack>
+    </Box>
+
+    {/* === Operating Systems === */}
+    <Box>
+      <Typography variant="h6" gutterBottom>
+        Operating Systems
+      </Typography>
+      <Stack direction="row" flexWrap="wrap" gap={1}>
+        {SKILLS[5].operatingSystems.map((skill, index) => (
+          <Chip key={index} label={skill} variant="outlined"/>
+        ))}
+      </Stack>
+    </Box>
+
+    {/* === Others === */}
+    <Box>
+      <Typography variant="h6" gutterBottom>
+        Others
+      </Typography>
+      <Stack direction="row" flexWrap="wrap" gap={1}>
+        {SKILLS[6].others.map((skill, index) => (
           <Chip key={index} label={skill} variant="outlined"/>
         ))}
       </Stack>
