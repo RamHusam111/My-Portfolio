@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Mail, User, MessageSquare, Send, CheckCircle } from 'lucide-react';
 import { formValidation } from '../functions/formValidation';
 import { Card } from '@mui/material';
+import { sendContactViaEmailJS } from '../functions/sendContactViaEmailJS';
 
 
 export default function ContactForm() {
@@ -31,22 +32,19 @@ export default function ContactForm() {
     }
   };
 
-  const handleSubmit = () => {
-    if (validateForm()) {
-      console.log('Form submitted:', formData);
-      setSubmitted(true);
-      
-      setTimeout(() => {
-        setFormData({
-          name: '',
-          email: '',
-          subject: '',
-          message: ''
-        });
-        setSubmitted(false);
-      }, 3000);
-    }
-  };
+  const handleSubmit = async () => {
+  if (!validateForm()) return;
+  try {
+    await sendContactViaEmailJS(formData);
+    setSubmitted(true);
+    setTimeout(() => {
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setSubmitted(false);
+    }, 3000);
+  } catch (err) {
+    setErrors((e) => ({ ...e, submit: err.message || "Failed to send." }));
+  }
+};
 
   const styles = {
     container: {

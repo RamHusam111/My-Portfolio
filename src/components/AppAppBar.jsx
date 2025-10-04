@@ -29,92 +29,71 @@ const StyledToolbar = styled(Toolbar)(({ theme }) => ({
   padding: '8px 12px',
 }));
 
-export default function AppAppBar() {
+export default function AppAppBar({ activeSection, onNavClick }) {
   const [open, setOpen] = React.useState(false);
 
   const toggleDrawer = (newOpen) => () => {
     setOpen(newOpen);
   };
 
-  return (
-    <AppBar
-      position="fixed"
-      enableColorOnDark
-      sx={{
-        boxShadow: 0,
-        bgcolor: 'transparent',
-        backgroundImage: 'none',
-        mt: 'calc(var(--template-frame-height, 0px) + 28px)',
-      }}
+
+  const scrollTo = (id) => {
+    onNavClick?.(id); // highlight immediately on click
+    // document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    setOpen(false);
+  };
+
+  const NavButton = ({ id, children }) => (
+    <Button
+      variant={activeSection === id ? 'contained' : 'text'}
+      color={activeSection === id ? 'primary' : 'info'}
+      size="small"
+      onClick={() => scrollTo(id)}
+      sx={activeSection === id ? { fontWeight: 600, borderRadius: 10 } : undefined}
     >
+      {children}
+    </Button>
+  );
+
+  return (
+    <AppBar position="fixed" enableColorOnDark sx={{ boxShadow: 0, bgcolor: 'transparent', backgroundImage: 'none',
+      mt: 'calc(var(--template-frame-height, 0px) + 28px)' }}>
       <Container maxWidth="sm">
-        <StyledToolbar variant="dense" >
+        <StyledToolbar variant="dense">
           <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
-            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-              {/* <Button variant="text" color="info" size="small">
-                Home
-              </Button> */}
-              <Button variant="text" color="info" size="small">
-                About
-              </Button>
-              <Button variant="text" color="info" size="small">
-                Projects
-              </Button>
-              <Button variant="text" color="info" size="small">
-                Skills
-              </Button>
-              <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
-                Experience
-              </Button>
-              <Button variant="text" color="info" size="small" sx={{ minWidth: 0 }}>
-                Contact
-              </Button>
+            <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 0.5 }}>
+              <NavButton id="about">About</NavButton>
+              <NavButton id="projects">Projects</NavButton>
+              <NavButton id="experience">Experience</NavButton>
+              <NavButton id="skills">Skills</NavButton>
+              <NavButton id="contact">Contact</NavButton>
             </Box>
           </Box>
 
-          <Box
-            sx={{
-              display: { xs: 'none', md: 'flex' },
-              gap: 1,
-              alignItems: 'center',
-            }}
-          >
+          <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 1, alignItems: 'center' }}>
             <ColorModeIconDropdown />
           </Box>
 
-
+          {/* Mobile drawer */}
           <Box sx={{ display: { xs: 'flex', md: 'none' }, gap: 1 }}>
             <ColorModeIconDropdown size="medium" />
             <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
               <MenuIcon />
             </IconButton>
-            <Drawer
-              anchor="top"
-              open={open}
-              onClose={toggleDrawer(false)}
-              PaperProps={{
-                sx: {
-                  top: 'var(--template-frame-height, 0px)',
-                },
-              }}
-            >
+            <Drawer anchor="top" open={open} onClose={toggleDrawer(false)}
+              PaperProps={{ sx: { top: 'var(--template-frame-height, 0px)' } }}>
               <Box sx={{ p: 2, backgroundColor: 'background.default' }}>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    justifyContent: 'flex-end',
-                  }}
-                >
+                <Box sx={{ display: 'flex', justifyContent: 'flex-end' }}>
                   <IconButton onClick={toggleDrawer(false)}>
                     <CloseRoundedIcon />
                   </IconButton>
                 </Box>
-                <MenuItem>Features</MenuItem>
-                <MenuItem>Testimonials</MenuItem>
-                <MenuItem>Highlights</MenuItem>
-                <MenuItem>Pricing</MenuItem>
-                <MenuItem>FAQ</MenuItem>
-                <MenuItem>Blog</MenuItem>
+                {/* Drawer items */}
+                <MenuItem onClick={() => scrollTo('about')}>About</MenuItem>
+                <MenuItem onClick={() => scrollTo('projects')}>Projects</MenuItem>
+                <MenuItem onClick={() => scrollTo('skills')}>Skills</MenuItem>
+                <MenuItem onClick={() => scrollTo('experience')}>Experience</MenuItem>
+                <MenuItem onClick={() => scrollTo('contact')}>Contact</MenuItem>
                 <Divider sx={{ my: 3 }} />
               </Box>
             </Drawer>
