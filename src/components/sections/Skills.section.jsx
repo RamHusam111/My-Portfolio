@@ -5,8 +5,8 @@ import { Card, Typography, Stack, Chip, Box} from '@mui/material';
 
 export default function SkillsSection() {
   return (
-    <Card variant="outlined" sx={{ boxShadow: 2, padding: 2, borderRadius: 2 }}>
-        <Stack direction="column" spacing={3} useFlexGap>
+    <>
+    <Stack direction="column" spacing={3} useFlexGap>
           <Typography variant="h2" mb={3} gutterBottom sx={{ justifyContent: 'center', display: 'flex'}}>
             Skills
           </Typography>
@@ -99,6 +99,6 @@ export default function SkillsSection() {
     </Box>
 
         </Stack>
-    </Card>
+    </>
   )
 }

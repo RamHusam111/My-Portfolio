@@ -39,7 +39,6 @@ export default function AppAppBar({ activeSection, onNavClick }) {
 
   const scrollTo = (id) => {
     onNavClick?.(id); // highlight immediately on click
-    // document.getElementById(id)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     setOpen(false);
   };
 

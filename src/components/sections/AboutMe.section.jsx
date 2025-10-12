@@ -10,9 +10,8 @@ import Card from '@mui/material/Card';
 
 export default function AboutMeSection() {
   return (
-
-    <Card variant="outlined" sx={{ boxShadow: 2, padding: 2, borderRadius: 2}}>
-      <Stack direction="column" spacing={3} useFlexGap>
+    <>
+    <Stack direction="column" spacing={3} useFlexGap>
         <Typography variant="h2"  gutterBottom sx={{ justifyContent: 'center', display: 'flex' }}>
           About Me
         </Typography>
@@ -50,8 +49,7 @@ export default function AboutMeSection() {
           </Stack>
         
       </Stack>
-
-    </Card>
+    </>
     
   )
 }

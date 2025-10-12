@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import { Mail, User, MessageSquare, Send, CheckCircle } from 'lucide-react';
 import { formValidation } from '../functions/formValidation';
-import { Card } from '@mui/material';
 import { sendContactViaEmailJS } from '../functions/sendContactViaEmailJS';
 
 
@@ -48,20 +47,17 @@ export default function ContactForm() {
 
   const styles = {
     container: {
-      minHeight: '100vh',
-    //   background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      // minHeight: '100vh',
+      padding: '35px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      padding: '24px',
-      fontFamily: '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif'
     },
     card: {
       width: '100%',
       maxWidth: '600px',
-    //   background: 'white',
       borderRadius: '16px',
-    //   boxShadow: '0 20px 60px rgba(0,0,0,0.3)',
+      boxShadow: '0 15px 50px rgba(0,0,0,0.3)',
       overflow: 'hidden',
       border: '1px solid #e5e7eb'
     },
@@ -92,8 +88,7 @@ export default function ContactForm() {
       alignItems: 'center',
       fontSize: '14px',
       fontWeight: '500',
-    //   color: '#374151',
-      marginBottom: '8px'
+      // marginBottom: '8px'
     },
     labelIcon: {
       marginRight: '8px'
@@ -102,7 +97,6 @@ export default function ContactForm() {
       width: '100%',
       padding: '12px 16px',
       fontSize: '16px',
-    //   border: '2px solid #e5e7eb',
       borderRadius: '8px',
       outline: 'none',
       transition: 'all 0.2s',
@@ -119,7 +113,6 @@ export default function ContactForm() {
       width: '100%',
       padding: '12px 16px',
       fontSize: '16px',
-    //   border: '2px solid #e5e7eb',
       borderRadius: '8px',
       outline: 'none',
       transition: 'all 0.2s',
@@ -137,10 +130,6 @@ export default function ContactForm() {
     button: {
       width: '100%',
       padding: '14px 24px',
-    //   fontSize: '16px',
-    //   fontWeight: '600',
-    //   color: 'white',
-    //   background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
       border: 'none',
       borderRadius: '8px',
       cursor: 'pointer',
@@ -149,7 +138,6 @@ export default function ContactForm() {
       justifyContent: 'center',
       gap: '8px',
       transition: 'all 0.2s',
-    //   boxShadow: '0 4px 12px rgba(102, 126, 234, 0.4)'
     },
     successContainer: {
       textAlign: 'center',
@@ -168,12 +156,10 @@ export default function ContactForm() {
     successTitle: {
       fontSize: '24px',
       fontWeight: '600',
-    //   color: '#1f2937',
       margin: '0 0 8px 0'
     },
     successText: {
       fontSize: '16px',
-    //   color: '#6b7280',
       margin: 0
     }
   };
@@ -181,7 +167,7 @@ export default function ContactForm() {
   const [focusedField, setFocusedField] = useState('');
 
   return (
-    <Card variant="outlined" sx={{ boxShadow: 2, padding: 2, borderRadius: 2 }}>     
+    <>
     <div style={styles.container}>
       <div style={styles.card}>
         <div style={styles.header}>
@@ -308,6 +294,6 @@ export default function ContactForm() {
         )}
       </div>
     </div>
-    </Card>
+    </>
   );
 }
