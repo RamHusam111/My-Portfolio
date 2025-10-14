@@ -23,10 +23,10 @@ export default function ProjectsSection() {
   title={project.title}
   descriptionParagraphs={project.descriptionParagraphs}
   note={project.note}
-  noteHighlights={project.noteHighlights}
   authors={project.authors}
   technologies={project.technologies}
   date={project.date}
+  githubUrl={project.githubUrl}
 />
 
         ))}

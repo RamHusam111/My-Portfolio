@@ -2,7 +2,7 @@ import React from 'react'
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import MarkunreadIcon from '@mui/icons-material/Markunread';
-import { GITHUB_URL, LINKEDIN_URL } from '../constants';
+import { GITHUB_URL, LINKEDIN_URL, EMAIL } from '../constants';
 import IconButton from '@mui/material/IconButton';
 export default function ContactWebsites() {
   return (
@@ -30,8 +30,8 @@ export default function ContactWebsites() {
             <IconButton
               color="inherit"
               size="medium"
-              href= 'mailto:husamramoni@gmail.com'
-              aria-label="LinkedIn"
+              href={`mailto:${EMAIL}`}
+              aria-label="Email"
               sx={{ alignSelf: 'center' }}
             >
               <MarkunreadIcon />

@@ -7,6 +7,8 @@ import SkillsSection from './sections/Skills.section';
 import ExperienceSection from './sections/Experience.section';
 import ContactForm from './ContactForm';
 import Section from './Section';
+import Stack from '@mui/material/Stack';
+import ContactWebsites from './ContactWebsites';
 
 
 export default function MainContent({ onSectionInView, scrollRoot }) {
@@ -53,7 +55,20 @@ export default function MainContent({ onSectionInView, scrollRoot }) {
       <Section id="projects"><ProjectsSection /></Section>
       <Section id="experience"><ExperienceSection /></Section>
       <Section id="skills"><SkillsSection /></Section>
-      <Section id="contact"><ContactForm /></Section>
+      <Section id="contact">
+        <ContactForm />
+        <Stack
+          
+            direction="row"
+            spacing={1}
+            useFlexGap
+            sx={{ justifyContent: 'left', color: 'text.secondary', }}
+          >
+            <ContactWebsites />
+
+
+          </Stack>
+        </Section>
     </Box>
   );
 }

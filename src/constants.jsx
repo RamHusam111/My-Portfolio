@@ -7,8 +7,12 @@ import automation from './assets/images/automation.webp';
 
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/husam-ramoni';
 export const GITHUB_URL = 'https://github.com/RamHusam111';
-export const ABOUT_ME_PARAGRAPH = `Hi, I'm Husam Ramoni graduated from Bethlehem University with a BSc in Software Engineering. I have hands on experience in developing production ready applications using modern technologies and best practices. Known for clear communication, teamwork, and delivering solutions
-that meet real-world needs.`;
+export const EMAIL = 'husamramoni@gmail.com';
+export const ABOUT_ME_PARAGRAPH = (
+  <>
+    Hi, I'm <strong>Husam Ramoni</strong>, a <strong>Software Engineering</strong> graduate from <strong>Bethlehem University</strong> with hands on experience in building <strong>scalable, production ready applications</strong>. I value <strong>clear communication</strong>, <strong>collaboration</strong>, and creating <strong>innovative</strong> solutions that solve real world problems.
+  </>
+);
 
 
 
@@ -34,89 +38,32 @@ export const SKILLS = [
   ]},
 
   {operatingSystems: [
-    'MacOS', 'Windows','Linux'
+    'MacOS', 'Windows','Linux', 'Windows Server'
   ]},
 
   {others: [
-     'Microservices', 'Maven', 'Swagger', 'Eureka' ,'Figma', 'Windows Server','XAMPP'
+     'Microservices', 'MAVN', 'Swagger', 'Eureka', 'Consul' ,'Figma','XAMPP', 'MetaBase', 'Grafana', 'WebSockets', 'React Router', 'React Query', 'Zustand', 'React Hook Form', 'REST APIs', 'OpenVPN', 'Feign Client',
   ]},
   
 ];
 
 
-
-
-
-
-
-export const PROJECTS_DATA = [
-  {
-    img: `${ordereDeMalte}`,
-    tag: 'MediSync',
-    title: 'Patient Management System For Hospital Staff',
-    descriptionParagraphs: [
-      'MediSync is a Business-to-Business (B2B) healthcare solution designed to efficiently manage, organize, and track patient data for the Holy Family Hospital.',
-      '', 
-      'This project was developed as part of my graduation project in collaboration with Holy Family Hospital and under the supervision of Bethlehem University.',
-    ],
-    note:
-      "It is not publicly accessible and is currently deployed on a local server within the hospital's network.",
-    noteHighlights: [
-      "is currently deployed on a local server within the hospital's network."
-    ],
-    authors: [
-      { name: 'Husam Ramoni', avatar: '/static/images/avatar/1.jpg' },
-      { name: 'Angela Salem', avatar: '/static/images/avatar/1.jpg' },
-      { name: 'Yousef Al-Bandak', avatar: '/static/images/avatar/1.jpg' },
-    ],
-    technologies: ['Java', 'React', 'Spring Boot', 'React Router', 'React Query', 'Zustand', 'React Hook Form', 'MySQL' , 'Windows Server', 'Docker', 'Microservices', 'MetaBase', 'Grafana', 'MAVN', 'Postman', 'Swagger', 'Consul', 'Hibernate', 'JPA', 'Jira'],
-    date: '2024 - 2025',
-  },
-  {
-    img: `${techSpot}`,
-    tag: 'TechSpot',
-    title: 'Social Media Website for Developers and Tech-Interested Individuals.',
-    descriptionParagraphs: [
-      'TechSpot is a social media hub for developers and tech enthusiasts, offering features like multimedia posts, code sharing with markdown, real-time chat, topic-based feeds, and seamless community interaction.',
-      
-    ],
-    note: 'This project was developed as part of my Software Engineering degree at Bethlehem University.',
-    noteHighlights: [],
-authors: [
-      { name: 'Husam Ramoni', avatar: '/static/images/avatar/1.jpg' },
-      { name: 'Angela Salem', avatar: '/static/images/avatar/1.jpg' },
-      { name: 'Yousef Al-Bandak', avatar: '/static/images/avatar/1.jpg' },
-    ], 
-    technologies: ['Java', 'React', 'NodeJS', 'Spring Boot', 'React Router', 'WebSockets', 'Firebase', 'MySQL' , 'Chakra UI', 'MAVN', 'Postman', 'Swagger', 'Hibernate', 'JPA', 'Jira'],
-    date: '2024',
-  },
-  {
-    img: `${automation}`,
-    tag: 'TechSpot Automation Testing',
-    title: 'Quality Assurance and Automation Testing for TechSpot Website',
-    descriptionParagraphs: [
-      'Implemented comprehensive quality assurance and automation testing for the TechSpot website, ensuring robust functionality, seamless user experience, and high performance across all features and components.'
-    ],
-    note: '',
-    noteHighlights: [],
-    authors: [
-      { name: 'Husam Ramoni', avatar: '/static/images/avatar/1.jpg' },
-      { name: 'Yousef Al-Bandak', avatar: '/static/images/avatar/1.jpg' },
-    ],
-    technologies: ['Java', 'Selenium', 'RestAssured', 'Junit', 'TestNG' ,'Mockito',  'MAVN', 'GitHub Actions', 'Excel', 'Postman'],
-    date: '2024',
-  },
-];
-
-
-
-
-
-
-
-
-
 export const ABOUT_ME_CARDS = [
+
+  {
+    img: `${third_place}`,
+    title: 'Third Place - Graduation Projects Competition',
+    description:'Our project "MediSync" won third place out of 12 in the graduation projects competition at Bethlehem University.',
+    date: 'Semester Spring 2025',
+  },
+
+  {
+    img: `${honors_spring2024}`,
+    title: 'Honors List',
+    description:'GPA: 3.30/4.0',
+    date: 'Semester Spring 2024',
+  },
+
   {
     img: `${deans_list_fall2023}`,
     // tag: 'MediSync',
@@ -129,21 +76,83 @@ export const ABOUT_ME_CARDS = [
     // technologies: [],
     date: 'Semester Fall 2023',
   },
+];
 
+
+
+
+export const PROJECTS_DATA = [
   {
-    img: `${honors_spring2024}`,
-    title: 'Honors List',
-    description:'GPA: 3.30/4.0',
-    date: 'Semester Spring 2024',
+    img: `${ordereDeMalte}`,
+    tag: 'MediSync',
+    title: 'Patient Management System For Holy Family Hospital Staff',
+    
+    descriptionParagraphs: [
+      <><strong>MediSync is a Business-to-Business (B2B)</strong> healthcare solution designed to efficiently manage, organize, and track patient data for the <strong>Holy Family Hospital</strong>.</>,
+      <>Completed as a <strong>graduation project</strong> in partnership with <strong>Holy Family Hospital</strong> and supervised by <strong>Bethlehem University</strong>.</>,
+      <><strong>Awarded third place</strong> in a competition of <strong>12 graduation projects</strong>.</>,
+    ],
+
+    note:
+      <>Deployed on a <strong>secure local server</strong> within the hospital’s network, <strong>restricted to internal access only.</strong></>,
+
+    authors: [
+      { name: 'Husam Ramoni', avatar: '/static/images/avatar/1.jpg' },
+      { name: 'Angela Salem', avatar: '/static/images/avatar/1.jpg' },
+      { name: 'Yousef Al-Bandak', avatar: '/static/images/avatar/1.jpg' },
+    ],
+    technologies: ['Java', 'React', 'Spring Boot', 'React Router', 'React Query', 'Zustand', 'React Hook Form', 'MySQL' , 'Windows Server', 'Docker', 'Microservices', 'MetaBase', 'Grafana', 'MAVN', 'Postman', 'Swagger', 'Consul', 'Hibernate', 'JPA', 'Jira'],
+    date: '2024 - 2025',
+    githubUrl: GITHUB_URL,
   },
-
   {
-    img: `${third_place}`,
-    title: 'Third Place - Graduation Projects Competition',
-    description:'Our project "MediSync" won third place out of 12 in the graduation projects competition at Bethlehem University.',
-    date: '2025',
+    img: `${techSpot}`,
+    tag: 'TechSpot',
+    title: 'Social Media Website for Developers and Tech-Interested Individuals.',
+    descriptionParagraphs: [
+      <><strong>TechSpot</strong> is a <strong>social media platform</strong> designed for <strong>developers and tech enthusiasts</strong>.</>,
+      <>It offers a range of features, including <strong>multimedia posts</strong>, <strong>Markdown supported code sharing</strong>, <strong>real time chat</strong>, <strong>topic based feeds</strong>, and <strong>an engaging community experience</strong>.</>,
+      <>Developed a <strong>Docker</strong> image to containerize the system, ensuring simplified deployment, scalability, and environment consistency across setups.</>
+    ],
+    note: '',
+
+authors: [
+      { name: 'Husam Ramoni', avatar: '/static/images/avatar/1.jpg' },
+      { name: 'Angela Salem', avatar: '/static/images/avatar/1.jpg' },
+      { name: 'Yousef Al-Bandak', avatar: '/static/images/avatar/1.jpg' },
+    ], 
+    technologies: ['Java', 'React', 'NodeJS', 'Spring Boot', 'Docker' , 'React Router', 'WebSockets', 'Firebase', 'MySQL' , 'Chakra UI', 'MAVN', 'Postman', 'Swagger', 'Hibernate', 'JPA', 'Jira'],
+    date: '2024',
+    githubUrl: 'https://github.com/ObjectOrienters/Techspot-Monolithic',
+  },
+  {
+    img: `${automation}`,
+    tag: 'TechSpot Automation Testing',
+    title: 'Quality Assurance and Automation Testing for TechSpot Website',
+    descriptionParagraphs: [
+      <>Implemented a comprehensive <strong>Quality Assurance (QA) and Automation Testing</strong> strategy for the <strong>TechSpot</strong> social media platform.</>,
+      <>Developed and executed <strong>automated test scripts</strong> using <strong>Java</strong>, <strong>Selenium</strong>, and <strong>RestAssured</strong> to ensure the reliability and functionality of both front-end and back-end components.</>,
+      <>Conducted extensive <strong>manual testing</strong> to identify and document bugs, performance issues, and user experience improvements.</>,
+    ],
+    note: '',
+    authors: [
+      { name: 'Husam Ramoni', avatar: '/static/images/avatar/1.jpg' },
+      { name: 'Yousef Al-Bandak', avatar: '/static/images/avatar/1.jpg' },
+    ],
+    technologies: ['Java', 'Selenium', 'RestAssured', 'Junit', 'TestNG' ,'Mockito',  'MAVN', 'GitHub Actions', 'Excel', 'Postman'],
+    date: '2024',
+    githubUrl: 'https://github.com/ObjectOrienters/Automation_Testing_TechSpot_Project'
   },
 ];
+
+
+
+
+
+
+
+
+
 
 
 export const EXPERIENCE_DATA = [

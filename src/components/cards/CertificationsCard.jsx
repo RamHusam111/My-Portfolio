@@ -83,9 +83,10 @@ export default function CertificationsCard({ img, title, description, date }) {
         onClose={closeLightbox}
         fullScreen={fullScreen}
         maxWidth="xl"
+
         PaperProps={{
           sx: {
-            backgroundColor: 'rgba(0,0,0,0.9)',
+            // backgroundColor: 'rgba(0,0,0,0.9)',
             boxShadow: 'none',
           },
         }}
@@ -114,7 +115,7 @@ export default function CertificationsCard({ img, title, description, date }) {
               display: 'block',
               margin: '0 auto',
               maxWidth: '100%',
-              maxHeight: '100vh',
+              maxHeight: '85vh',
               objectFit: 'contain',
               userSelect: 'none',
             }}

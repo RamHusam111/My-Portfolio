@@ -10,10 +10,10 @@ import Avatar from '@mui/material/Avatar';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import Box from '@mui/material/Box';
 import Chip from '@mui/material/Chip';
-import { highlightText } from '../../functions/highlightText.function';
+import CardActionArea from '@mui/material/CardActionArea';
 
 export default function ProjectsCard({
-  img, tag, title, descriptionParagraphs = [], note = '', noteHighlights = [],authors, technologies, date}) {
+  img, tag, title, descriptionParagraphs = [], note = '', authors, technologies, date, githubUrl }) {
 
   const [focusedCardIndex, setFocusedCardIndex] = React.useState(null);
 
@@ -32,77 +32,98 @@ export default function ProjectsCard({
           variant="outlined"
           onFocus={() => handleFocus(0)}
           onBlur={handleBlur}
-          tabIndex={0}
+          tabIndex={-1}
           className={focusedCardIndex === 0 ? 'Mui-focused' : ''}
         >
-          {img && (
-            <CardMedia
-              component="img"
-              alt="Image should be here"
-              image={img}
-              sx={{
-                aspectRatio: '16 / 9',
-                borderBottom: '1px solid',
-                borderColor: 'divider',
+          <CardActionArea
+            component="a"
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label={title ? `Open ${title} on GitHub` : 'Open project on GitHub'}
+            sx={{
+              // keep the same visual feel
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'stretch',
+            }}
+          >
 
-                objectFit: 'cover',
-                width: '100%',
-                height: 'auto',
+            {img && (
+              <CardMedia
+                component="img"
+                alt={title || 'Project image'}
+                image={img}
+                sx={{
+                  aspectRatio: '16 / 9',
+                  borderBottom: '1px solid',
+                  borderColor: 'divider',
+                  objectFit: 'cover',
+                  width: '100%',
+                  height: 'auto',
 
-              }}
-            />
-          )}
+                }}
+              />
+            )}
 
-          <SyledCardContent>
-            {(tag || title || descriptionParagraphs.length || note) && (
+            <SyledCardContent>
+              {(tag || title || descriptionParagraphs.length || note) && (
 
-              <>
-                {tag && (
-                  <Typography gutterBottom variant="subtitle1" component="div">
-                    {tag}
-                  </Typography>
-                )}
+                <>
+                  {tag && (
+                    <Typography gutterBottom variant="subtitle1" component="div">
+                      {tag}
+                    </Typography>
+                  )}
 
-                {title && (
-                  <Typography gutterBottom variant="h6" component="div">
-                    {title}
-                  </Typography>
-                )}
+                  {title && (
+                    <Typography gutterBottom variant="h6" component="div">
+                      {title}
+                    </Typography>
+                  )}
 
-{/* paragraphs */}
-              {descriptionParagraphs.map((p, idx) => (
-                <StyledTypography key={idx} variant="body2" color="text.secondary" gutterBottom>
-                  {p}
-                </StyledTypography>
-              ))}
-
-              {/* note */}
-              {note && (
-                <StyledTypography variant="body2" color="text.secondary" sx={{mt: 3}} gutterBottom>
-                  <Box
-                    component="span"
-                    sx={{ fontWeight: 600, color: 'warning.main', mr: 0.5 }}
-                  >
-                    NOTE:
+                  {/* paragraphs */}
+                  <Box component="ul" sx={{ pl: 3, my: 1 }}>
+                    {descriptionParagraphs
+                      .filter(Boolean) // skip empty strings
+                      .map((p, idx) => (
+                        <Typography
+                          key={idx}
+                          component="li"
+                          variant="body2"
+                          color="text.secondary"
+                          sx={{ mb: 1.5 }}
+                        >
+                          {p}
+                        </Typography>
+                      ))}
                   </Box>
-                  {highlightText(note, noteHighlights)}
-                </StyledTypography>
-              )}
-            </>
-          )}
-          </SyledCardContent>
 
-          <Author authors={authors} date={date} technologies={technologies} />
+
+                  {/* note */}
+                  {note && (
+                    <StyledTypography variant="body2" color="text.secondary" sx={{ mt: 3 }} gutterBottom>
+                      <Box
+                        component="span"
+                        sx={{ fontWeight: 600, color: 'warning.main', mr: 0.5 }}
+                      >
+                        NOTE:
+                      </Box>
+                      {note}
+                    </StyledTypography>
+                  )}
+                </>
+              )}
+            </SyledCardContent>
+
+            <Author authors={authors} date={date} technologies={technologies} />
+
+          </CardActionArea>
         </SyledCard>
       </Grid>
     </>
   )
 }
-
-
-
-
-
 
 
 
@@ -136,14 +157,9 @@ const SyledCardContent = styled(CardContent)({
     paddingBottom: 16,
   },
 });
-
 function Author({ authors, date, technologies }) {
-  const hasTechnologies =
-    Array.isArray(technologies) && technologies.length > 0;
-
-  const hasAuthors =
-    Array.isArray(authors) && authors.length > 0;
-
+  const hasTechnologies = Array.isArray(technologies) && technologies.length > 0;
+  const hasAuthors = Array.isArray(authors) && authors.length > 0;
   const hasDate = Boolean(date);
 
   // If nothing to show, render nothing

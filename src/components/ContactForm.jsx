@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Mail, User, MessageSquare, Send, CheckCircle } from 'lucide-react';
 import { formValidation } from '../functions/formValidation';
 import { sendContactViaEmailJS } from '../functions/sendContactViaEmailJS';
+import { EMAIL } from '../constants';
 
 
 export default function ContactForm() {
@@ -47,8 +48,8 @@ export default function ContactForm() {
 
   const styles = {
     container: {
-      // minHeight: '100vh',
-      padding: '35px',
+      minHeight: '100vh',
+      // padding: '35px',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
@@ -62,7 +63,7 @@ export default function ContactForm() {
       border: '1px solid #e5e7eb'
     },
     header: {
-      padding: '32px 32px 24px',
+      padding: '20px 32px 24px',
       textAlign: 'center',
     //   background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
     //   color: 'white'
@@ -78,7 +79,7 @@ export default function ContactForm() {
       opacity: 0.9
     },
     formContainer: {
-      padding: '32px'
+      padding: '20px'
     },
     inputGroup: {
       marginBottom: '24px'
@@ -172,7 +173,8 @@ export default function ContactForm() {
       <div style={styles.card}>
         <div style={styles.header}>
           <h1 style={styles.title}>Get In Touch</h1>
-          <p style={styles.subtitle}>I'd love to hear from you. Send me a message!</p>
+          <p style={styles.subtitle}>Please contact me directly at my <a href={`mailto:${EMAIL}`}> e-mail </a> or through this form.</p>
+          
         </div>
         
         {submitted ? (
