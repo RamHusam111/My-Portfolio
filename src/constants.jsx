@@ -1,6 +1,7 @@
 import ordereDeMalte from './assets/images/ordereDeMalte.png';
 import deans_list_fall2023 from './assets/images/deans_list_fall2023.jpg';
 import honors_spring2024 from './assets/images/honors_spring2024.jpeg';
+import honors_spring2025 from './assets/images/honors_spring2025.jpg';
 import third_place from './assets/images/third_place.jpeg';
 import techSpot from './assets/images/techSpot.jpeg';
 import automation from './assets/images/automation.webp';
@@ -54,6 +55,13 @@ export const ABOUT_ME_CARDS = [
     img: `${third_place}`,
     title: 'Third Place - Graduation Projects Competition',
     description:'Our project "MediSync" won third place out of 12 in the graduation projects competition at Bethlehem University.',
+    date: 'Semester Spring 2025',
+  },
+
+  {
+    img: `${honors_spring2025}`,
+    title: 'Honors List',
+    description:'GPA: 3.10/4.0',
     date: 'Semester Spring 2025',
   },
 
