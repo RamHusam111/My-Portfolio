@@ -6,9 +6,22 @@ import third_place from './assets/images/third_place.jpeg';
 import techSpot from './assets/images/techSpot.jpeg';
 import automation from './assets/images/automation.webp';
 
+export const PORTFOLIO_TITLE = 'Husam Portfolio';
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/husam-ramoni';
 export const GITHUB_URL = 'https://github.com/RamHusam111';
 export const EMAIL = 'husamramoni@gmail.com';
+
+export const SECTIONS = [
+    { id: 'about', label: 'About' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'experience', label: 'Experience' },
+    { id: 'skills', label: 'Skills' },
+    { id: 'contact', label: 'Contact' },
+  ];
+
+
+
+
 export const ABOUT_ME_PARAGRAPH = (
   <>
     Hi, I'm <strong>Husam Ramoni</strong>, a <strong>Software Engineering</strong> graduate from <strong>Bethlehem University</strong> with hands on experience in building <strong>scalable, production ready applications</strong>. I value <strong>clear communication</strong>, <strong>collaboration</strong>, and creating <strong>innovative</strong> solutions that solve real world problems.

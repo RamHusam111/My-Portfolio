@@ -38,7 +38,12 @@ function AppTheme(props) {
     return <React.Fragment>{children}</React.Fragment>;
   }
   return (
-    <ThemeProvider theme={theme} disableTransitionOnChange>
+    <ThemeProvider 
+    theme={theme} 
+    disableTransitionOnChange
+    defaultMode="light"
+
+    >
       {children}
     </ThemeProvider>
   );
