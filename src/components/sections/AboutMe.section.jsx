@@ -2,7 +2,7 @@ import React from 'react'
 import Typography from '@mui/material/Typography';
 import Stack from '@mui/material/Stack';
 import ContactWebsites from '../ContactWebsites';
-import { ABOUT_ME_CARDS, ABOUT_ME_PARAGRAPH } from '../../constants';
+import {ABOUT_ME_CARDS, ABOUT_ME_PARAGRAPH, SUCCESS_STORY_URL} from '../../constants';
 import Grid from '@mui/material/Grid';
 import CertificationsCard from '../cards/CertificationsCard';
 import Card from '@mui/material/Card';
@@ -16,7 +16,7 @@ export default function AboutMeSection() {
           About Me
         </Typography>
         <Typography variant='body1' gutterBottom sx={{ textAlign: 'justify', textSizeAdjust: 'auto', fontSize: '1.2rem' }}>
-          {ABOUT_ME_PARAGRAPH}
+          {ABOUT_ME_PARAGRAPH} <a href={SUCCESS_STORY_URL} target="_blank" rel="noopener noreferrer">Read the success story</a>
         </Typography>
         <Typography variant='h5' gutterBottom>
           University Achievements

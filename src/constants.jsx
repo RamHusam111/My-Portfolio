@@ -5,11 +5,14 @@ import honors_spring2025 from './assets/images/honors_spring2025.jpg';
 import third_place from './assets/images/third_place.jpeg';
 import techSpot from './assets/images/techSpot.jpeg';
 import automation from './assets/images/automation.webp';
+import Typography from "@mui/material/Typography";
+import React from "react";
 
 export const PORTFOLIO_TITLE = 'Husam Portfolio';
 export const LINKEDIN_URL = 'https://www.linkedin.com/in/husam-ramoni';
 export const GITHUB_URL = 'https://github.com/RamHusam111';
 export const EMAIL = 'husamramoni@gmail.com';
+export const SUCCESS_STORY_URL = 'https://www.bethlehem.edu/2026/02/27/software-engineering-hospital-system-deployment/';
 
 export const SECTIONS = [
     { id: 'about', label: 'About' },
