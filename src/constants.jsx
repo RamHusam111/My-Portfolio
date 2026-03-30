@@ -23,9 +23,14 @@ export const SECTIONS = [
 
 
 export const ABOUT_ME_PARAGRAPH = (
-  <>
-    Hi, I'm <strong>Husam Ramoni</strong>, a <strong>Software Engineering</strong> graduate from <strong>Bethlehem University</strong> with hands on experience in building <strong>scalable, production ready applications</strong>. I value <strong>clear communication</strong>, <strong>collaboration</strong>, and creating <strong>innovative</strong> solutions that solve real world problems.
-  </>
+  // <>
+  //   Hi, I'm <strong>Husam Ramoni</strong>, a <strong>Software Engineering</strong> graduate from <strong>Bethlehem University</strong> with hands on experience in building <strong>scalable, production ready applications</strong>. I value <strong>clear communication</strong>, <strong>collaboration</strong>, and creating <strong>innovative</strong> solutions that solve real world problems.
+  // </>
+<>
+  <strong>Junior Software Engineer </strong>with experience deploying production systems for <strong>100+ users </strong>using <strong>Java, Spring Boot, microservices,
+  and Docker.</strong> Strong in building secure <strong> RESTful </strong>APIs and data driven solutions, with hands on experience collaborating in <strong>Agile </strong>team
+  environments.
+</>
 );
 
 
@@ -115,7 +120,7 @@ export const PROJECTS_DATA = [
     ],
 
     note:
-      <>Deployed on a <strong>secure local server</strong> within the hospital’s network, <strong>restricted to internal access only.</strong></>,
+        <>Deployed for real world customer <strong>Holy Family Hospital</strong></>,
 
     authors: [
       { name: 'Husam Ramoni', avatar: '/static/images/avatar/1.jpg' },
@@ -124,7 +129,7 @@ export const PROJECTS_DATA = [
     ],
     technologies: ['Java', 'React', 'Spring Boot', 'React Router', 'React Query', 'Zustand', 'React Hook Form', 'MySQL' , 'Windows Server', 'Docker', 'Microservices', 'MetaBase', 'Grafana', 'MAVN', 'Postman', 'Swagger', 'Consul', 'Hibernate', 'JPA', 'Jira'],
     date: '2024 - 2025',
-    githubUrl: GITHUB_URL,
+    githubUrl: 'https://github.com/ObjectOrienters/MediSync',
   },
   {
     img: `${techSpot}`,
